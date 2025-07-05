@@ -55,7 +55,7 @@ const Hero = () => {
         </div>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
-            href="/signup"
+            href="/auth/signup"
             className="flex min-w-[200px] items-center justify-center space-x-2 rounded-xl bg-[#3B82F6] px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-blue-700"
           >
             <span>Get Started Free</span> <ArrowRight className="h-5 w-5" />

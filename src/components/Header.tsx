@@ -25,7 +25,7 @@ const Header = () => {
         </button>
 
         <nav>
-          <Link href="/signin" className="font-medium text-[#3B82F6]">
+          <Link href="/auth/signin" className="font-medium text-[#3B82F6]">
             Sign In
           </Link>
         </nav>
