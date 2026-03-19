@@ -1,3 +1,5 @@
+import nextCoreWebVitals from "eslint-config-next/core-web-vitals"
+import nextTypescript from "eslint-config-next/typescript"
 import { dirname } from "path"
 import { fileURLToPath } from "url"
 import { FlatCompat } from "@eslint/eslintrc"
@@ -10,13 +12,18 @@ const compat = new FlatCompat({
 })
 
 const eslintConfig = [
+  ...nextCoreWebVitals,
+  ...nextTypescript,
   ...compat.config({
-    extends: ["next/core-web-vitals", "next/typescript", "prettier"],
+    extends: ["prettier"],
     plugins: ["@typescript-eslint", "tailwindcss"],
+
     rules: {
       "tailwindcss/classnames-order": "off",
     },
+
     parser: "@typescript-eslint/parser",
+
     overrides: [
       {
         files: ["*.ts", "*.tsx"],
@@ -33,6 +40,15 @@ const eslintConfig = [
       },
     ],
   }),
+  {
+    ignores: [
+      "node_modules/**",
+      ".next/**",
+      "out/**",
+      "build/**",
+      "next-env.d.ts",
+    ],
+  },
 ]
 
 export default eslintConfig
